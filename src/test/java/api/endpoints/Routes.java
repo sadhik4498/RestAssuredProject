@@ -7,13 +7,13 @@ public class Routes {
 //	Put: petstore.swagger.io/v2/User/{Username}
 //	Delete: petstore.swagger.io/v2/User/{Username
 	
-	public static String base_url ="petstore.swagger.io/v2";
+	public static String base_url ="https://petstore.swagger.io/v2" ;
 	
 	//end pints for Store API
-	public static String post_url = base_url+"User";
-	public static String get_url = base_url+"User/{Username}";
-	public static String update_url = base_url+"User/{Username}";
-	public static String delete_url = base_url+"User/{Username}";
+	public static String post_url = base_url+"/User";
+	public static String get_url = base_url+"/User/{Username}";
+	public static String update_url = base_url+"/User/{Username}";
+	public static String delete_url = base_url+"/User/{Username}";
 	
 	
 
