@@ -25,7 +25,7 @@ public class UserTest {
 	    user = new User();
 	    
 	    user.setId(faker.idNumber().hashCode());
-	    user.setUsername(faker.name().username());
+	    user.setUsername(faker.name().firstName());
 	    user.setFirstName(faker.name().firstName());
 	    user.setLastName(faker.name().lastName());
 	    user.setEmail(faker.internet().safeEmailAddress());
@@ -47,17 +47,19 @@ public class UserTest {
 		 response.then().log().all();
 		 
 		 Assert.assertEquals(response.getStatusCode(), 200);
+		 System.out.println("1.......................");
 	}
 	
-//	@Test(priority = 2)
-//	public void getUser() {
-//		
-//		System.out.println(this.user.getUsername());
-//		 Response response = UserEndPoints.readUser(this.user.getUsername());
-//		 response.then().log().all();
-//		 Assert.assertEquals(response.getStatusCode(),200);
-//		 
-//	}
+	@Test(priority = 2)
+	public void getUser() {
+		
+		System.out.println(this.user.getUsername());
+		 Response response = UserEndPoints.readUser(this.user.getUsername());
+		 response.then().log().all();
+		 System.out.println("2.......................");
+		 Assert.assertEquals(response.getStatusCode(),200);
+
+	}
 	
 	@Test(priority = 3)
 	public void updateUser() throws InterruptedException  {
@@ -73,6 +75,7 @@ public class UserTest {
 		 response.then().log().all();
 		 
 		 Assert.assertEquals(response.getStatusCode(), 200);
+		 System.out.println("3.....................");
 	}
 
 }

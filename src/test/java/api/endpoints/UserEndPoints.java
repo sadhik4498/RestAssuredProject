@@ -32,7 +32,7 @@ public class UserEndPoints {
 	public static Response readUser(String userName){
 			
 		Response response = given()
-			.pathParams("username",userName)
+			.pathParam("username",userName)
 		.when()
 			.get(Routes.get_url);
 			
@@ -47,7 +47,7 @@ public class UserEndPoints {
 		Response response = given()
 			.contentType(ContentType.JSON)
 			.accept(ContentType.JSON)
-			.pathParams("username", userName)
+			.pathParam("username", userName)
 			.body(payload)
 		.when()
 			.get(Routes.update_url);
